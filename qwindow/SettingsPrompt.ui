@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0" connectslotsbyname="false">
+    <class>SettingsPrompt</class>
+    <widget class="QWidget" name="SettingsPrompt">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>640</width>
+                <height>480</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Settings - Prompt</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                    <item>
+                        <layout class="QVBoxLayout" name="verticalLayout_4">
+                            <item>
+                                <widget class="QLabel" name="label_content">
+                                    <property name="text">
+                                        <string>Prompt for generating content</string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QPlainTextEdit" name="prompt_content"/>
+                            </item>
+                        </layout>
+                    </item>
+                    <item>
+                        <layout class="QVBoxLayout" name="verticalLayout_5">
+                            <item>
+                                <widget class="QLabel" name="label_code">
+                                    <property name="text">
+                                        <string>Prompt for generating code</string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QPlainTextEdit" name="prompt_code"/>
+                            </item>
+                        </layout>
+                    </item>
+                </layout>
+            </item>
+            <item>
+                <widget class="QDialogButtonBox" name="button_box">
+                    <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="standardButtons">
+                        <set>QDialogButtonBox::StandardButton::Ok|QDialogButtonBox::StandardButton::RestoreDefaults
+                        </set>
+                    </property>
+                </widget>
+            </item>
+        </layout>
+    </widget>
+    <resources/>
+    <connections>
+        <connection>
+            <sender>button_box</sender>
+            <signal>accepted()</signal>
+            <receiver>SettingsPrompt</receiver>
+            <slot>accept()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>248</x>
+                    <y>254</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>157</x>
+                    <y>274</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>button_box</sender>
+            <signal>rejected()</signal>
+            <receiver>SettingsPrompt</receiver>
+            <slot>reject()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>316</x>
+                    <y>260</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>286</x>
+                    <y>274</y>
+                </hint>
+            </hints>
+        </connection>
+    </connections>
+    <slots>
+        <slot>accept()</slot>
+        <slot>reject()</slot>
+    </slots>
+</ui>

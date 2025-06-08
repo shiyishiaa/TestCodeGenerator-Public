@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compile-ui",
+      "type": "shell",
+      "command": "${workspaceFolder}/script/compile_ui.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\script\\compile_ui.cmd"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+} 

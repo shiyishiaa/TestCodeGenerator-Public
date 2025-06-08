@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0" connectslotsbyname="false">
+    <class>SettingsModel</class>
+    <widget class="QDialog" name="SettingsModel">
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>471</width>
+                <height>220</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="windowTitle">
+            <string>Settings - Model</string>
+        </property>
+        <layout class="QFormLayout">
+            <item row="1" column="0">
+                <widget class="QLabel" name="label_model_provider">
+                    <property name="text">
+                        <string>Model Provider</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="1">
+                <widget class="QComboBox" name="combo_box_model_provider"/>
+            </item>
+            <item row="2" column="0">
+                <widget class="QLabel" name="label_api_key">
+                    <property name="text">
+                        <string>API Key</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="1">
+                <widget class="QLineEdit" name="line_edit_api_key">
+                    <property name="maxLength">
+                        <number>200</number>
+                    </property>
+                    <property name="echoMode">
+                        <enum>QLineEdit::EchoMode::PasswordEchoOnEdit</enum>
+                    </property>
+                    <property name="placeholderText">
+                        <string>Input API key</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="0">
+                <widget class="QLabel" name="label_api_host">
+                    <property name="text">
+                        <string>API Host</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="1">
+                <widget class="QLineEdit" name="line_edit_api_host">
+                    <property name="maxLength">
+                        <number>1000</number>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="0">
+                <widget class="QLabel" name="label_model">
+                    <property name="text">
+                        <string>Model</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="1">
+                <widget class="QComboBox" name="combo_box_model">
+                    <property name="editable">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="0">
+                <widget class="QLabel" name="label_temperature">
+                    <property name="text">
+                        <string>Temperature</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="1">
+                <widget class="QLineEdit" name="line_edit_temperature">
+                    <property name="maxLength">
+                        <number>10</number>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="0" colspan="2">
+                <widget class="QFloatSlider" name="horizontal_slider_temperature">
+                    <property name="maximum">
+                        <number>20</number>
+                    </property>
+                    <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="tickPosition">
+                        <enum>QSlider::TickPosition::NoTicks</enum>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="1">
+                <widget class="QDialogButtonBox" name="button_box_confirm">
+                    <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="standardButtons">
+                        <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="0">
+                <widget class="QLabel" name="label_max_token">
+                    <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Max
+                            Token of Current Model:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                        </string>
+                    </property>
+                    <property name="textFormat">
+                        <enum>Qt::TextFormat::RichText</enum>
+                    </property>
+                </widget>
+            </item>
+        </layout>
+    </widget>
+    <customwidgets>
+        <customwidget>
+            <class>QFloatSlider</class>
+            <extends>QSlider</extends>
+            <header>qwidget</header>
+        </customwidget>
+    </customwidgets>
+    <resources/>
+    <connections>
+        <connection>
+            <sender>button_box_confirm</sender>
+            <signal>accepted()</signal>
+            <receiver>SettingsModel</receiver>
+            <slot>accept()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>248</x>
+                    <y>254</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>157</x>
+                    <y>274</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>button_box_confirm</sender>
+            <signal>rejected()</signal>
+            <receiver>SettingsModel</receiver>
+            <slot>reject()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>316</x>
+                    <y>260</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>286</x>
+                    <y>274</y>
+                </hint>
+            </hints>
+        </connection>
+    </connections>
+</ui>
